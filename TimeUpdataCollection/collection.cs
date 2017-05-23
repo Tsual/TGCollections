@@ -79,4 +79,13 @@ namespace TGCollections
             }
         }
     }
+
+    public class TimeUpdataObcollection<T>:System.Collections.ObjectModel.ObservableCollection<T>
+    {
+
+
+
+
+
+    }
 }
