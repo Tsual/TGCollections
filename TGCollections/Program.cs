@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace TGCollections
 {
@@ -16,10 +17,23 @@ namespace TGCollections
 
     class Tt
     {
-         public static Task<int> func1()
+
+
+
+        public static Task<int> func1()
         {
             System.Threading.Thread.Sleep(100);
-            return Task.Run(()=> { return 500; });
+            return Task.Run(() => { return 500; });
         }
+
+        public static void func2()
+        {
+            int[] ar = { 0, 1 };
+            List<int> arr = new List<int> { 0, 1, 1 };
+            var e = arr.GetEnumerator();
+            
+            
+        }
+
     }
 }
