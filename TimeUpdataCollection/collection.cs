@@ -27,21 +27,32 @@ namespace TGCollections
             public int index;
         }
 
-        
+        long _ptime = 0;
         item[] _items = new item[128];
         int _length = 0;
-        public int Length { get => _length;  }
+        public int Length { get => _length; }
+
+        public TimeUpdataCollection(long ptime)
+        {
+            if (ptime <= 0) throw new Exception(@"pitme<=0");
+            
+
+
+        }
+
+        public T this[int index]
+        {
+            get => default(T);
+        }
 
 
 
-
-
-        T getNextE(ref int current,out bool m)
+        T getNextE(ref int current, out bool m)
         {
             while (++current <= _length && _items[current].state == ItemState.Available)
             {
                 m = true;
-                return  _items[current].obj;
+                return _items[current].obj;
             }
             m = false;
             return default(T);
@@ -80,7 +91,7 @@ namespace TGCollections
         }
     }
 
-    public class TimeUpdataObcollection<T>:System.Collections.ObjectModel.ObservableCollection<T>
+    public class TimeUpdataObcollection<T> : System.Collections.ObjectModel.ObservableCollection<T>
     {
 
 
